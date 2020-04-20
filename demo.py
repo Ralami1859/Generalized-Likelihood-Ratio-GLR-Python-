@@ -36,7 +36,6 @@ delta = 0.01
 
 glr = ImprovedGLR(sigma) # instantiation of a GLR object
 
-#bocpd = BOCPD(1/seq_obs.size)
 vect_restart = np.array([]) # for plotting....
 
 start = time.time() 
