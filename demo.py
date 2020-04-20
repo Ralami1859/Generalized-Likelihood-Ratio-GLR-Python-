@@ -17,9 +17,6 @@ def Bernoulli_Environment(means, period):
         env = np.append(env, means[p]*np.ones((period[p])))
     return env
 
-"""
-environment = constructEnvironment(environment, Period) # Building the piece-wise stationary Bernoulli distributions
-"""
 env = Bernoulli_Environment(np.array([0.9,0.1,0.8,0.2,0.6,0.2]),np.array([600,700,200,300,400,800]))
 
 seq_obs = ((np.random.uniform(0,1,np.size(env)) < env) == True)*1 # sequence of observations
