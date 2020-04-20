@@ -2,7 +2,7 @@ from __future__ import division
 import numpy as np
 from ImprovedGLR import *
 import matplotlib.pyplot as plt
-
+import time
 
 
 """
@@ -31,7 +31,7 @@ seq_obs = ((np.random.uniform(0,1,np.size(env)) < env) == True)*1 # sequence of 
 ------------------------------------------------------------------------------------------------------------------------------
 """
 sigma = 0.5
-delta = 0..01
+delta = 0.01
 
 
 glr = ImprovedGLR(sigma) # instantiation of a GLR object
@@ -39,13 +39,17 @@ glr = ImprovedGLR(sigma) # instantiation of a GLR object
 #bocpd = BOCPD(1/seq_obs.size)
 vect_restart = np.array([]) # for plotting....
 
+start = time.time() 
+
 # Launching the interaction with the environment
 for t in range (env.size):
     obs = np.random.uniform() < env[t]
     restart = glr.process(obs)
     vect_restart = np.append(vect_restart, restart)
 
+elapsed = (time.time() - start)
 
+print(elapsed)
 
 
 """
